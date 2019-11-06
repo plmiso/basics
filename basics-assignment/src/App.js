@@ -40,7 +40,7 @@ class App extends Component {
         <h1>Basics - assignment</h1>
         <UserInput 
         changed={this.addSomeExperienceHandler}></UserInput>
-        <UserOutput  style={style} 
+        <UserOutput style={style} 
         name={this.state.developers[0].name}
         language={this.state.developers[0].language}
         experience={this.state.developers[0].experience}
