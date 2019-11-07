@@ -3,7 +3,6 @@ import './Person.css'
 
 
 const person = ( props ) => {
-    
     return(
     <div className="Person">
         {/* this.props.name kiedy używamy klasy jako podstawy komponentu */}
