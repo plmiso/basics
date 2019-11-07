@@ -40,15 +40,8 @@ class App extends Component {
 
 
   render() {
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      
-    }
+    let btnClass = ''
+    
 
     let persons = null;
 
@@ -65,7 +58,7 @@ class App extends Component {
           })}
         </div>
       )
-      style.backgroundColor = 'red'
+      btnClass = classes.Red
      
     }
     //DYNAMICALLY ADDED STYLES
@@ -81,7 +74,7 @@ class App extends Component {
         <div className={classes.App}>
         <h1>Siema</h1>
         <p className={assignedClasses.join(' ')}>Działa</p>
-        <button style={style}
+        <button className={btnClass}
           onClick={this.togglePersonHandler}>Toggle people</button>
         {persons}
       </div>
