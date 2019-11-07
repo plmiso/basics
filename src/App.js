@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person'
 
+
 class App extends Component {
   state = {
     persons: [
@@ -40,11 +41,13 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      
     }
 
     let persons = null;
@@ -62,10 +65,22 @@ class App extends Component {
           })}
         </div>
       )
+      style.backgroundColor = 'red'
+     
     }
+    //DYNAMICALLY ADDED STYLES
+    let classes = []
+    if(this.state.persons.length <=2){
+      classes.push('red')
+    }
+    if(this.state.persons.length <=1){
+      classes.push('bold')
+    }
+
     return (
-      <div className="App">
+        <div className="App">
         <h1>Siema</h1>
+        <p className={classes.join(' ')}>Działa</p>
         <button style={style}
           onClick={this.togglePersonHandler}>Toggle people</button>
         {persons}
