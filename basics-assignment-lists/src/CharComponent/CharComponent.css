@@ -1,0 +1,9 @@
+.CharComponent {
+    display: inline-block;
+    padding: 16px;
+    text-align: center;
+    color: #666666a8;
+    margin: 16px;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 2px 3px #ccc;
+}
