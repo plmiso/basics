@@ -6,6 +6,23 @@ const cockpit = (props) => {
         //odpala się za każdym razem kiedy komponent jest używany
         //spoko do http request
         console.log('[Cockpit.js] useEffect')
+        // fake http
+        setTimeout(() => {
+            alert('Saved data to cloud!')
+        }, 1000)
+        return () =>{
+            
+            //zwracanie pustej funkcji w useEffect pozwala na cleanup 
+            console.log('[Cockpit.js] cleanup work in useEffect')
+        }
+    }, [])
+
+    useEffect(() =>{
+        console.log('[Cockpit.js] 2nd useEffect')
+        return () =>{
+            //zwracanie pustej funkcji w useEffect pozwala na cleanup 
+            console.log('[Cockpit.js] cleanup work in 2nd useEffect')
+        }
     })
     
     let assignedClasses = []
