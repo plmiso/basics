@@ -51,7 +51,7 @@ class App extends Component {
 
    const persons = [...this.state.persons]
    persons[personIndex] = person
-  
+   //BEST PRACTICE TO UPDATE STATE BASED ON OLD STATE
    this.setState((prevState, props) =>{
      return{
        persons: persons,
