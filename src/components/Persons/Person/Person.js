@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import classes from "./Person.css";
 import withClass from '../../../hoc/withClass'
+import AuthContext from '../../../context/auth-context'
 
 class Person extends Component {
   constructor(props){
@@ -20,7 +21,11 @@ class Person extends Component {
     return (
         //Fragment as wrapper
         <Fragment>
-        {/* /* this.props.name kiedy używamy klasy jako podstawy komponentu */}
+
+        <AuthContext.Consumer>
+          {context => 
+          context.authenticated ? <p>Authenticated</p> : <p>Please log in</p> }
+        </AuthContext.Consumer>
         <p onClick={this.props.click}>
           Oto jestę {this.props.name} i mam {this.props.age} lat
         </p>
