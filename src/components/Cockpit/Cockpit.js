@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import classes from './Cockpit.css'
 
 const cockpit = (props) => {
+    useEffect(() =>{
+        //odpala się za każdym razem kiedy komponent jest używany
+        //spoko do http request
+        console.log('[Cockpit.js] useEffect')
+    })
     
     let assignedClasses = []
     let btnClass =''
